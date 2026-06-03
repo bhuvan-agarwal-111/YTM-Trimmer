@@ -1,4 +1,5 @@
 # YTM Trimmer
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Problem Statement
 Have you ever listened to a song on YouTube Music and wished you could skip a long, drawn-out intro, or cut off a 2-minute silent outro? Maybe you only want to listen to a specific section of an hour-long mix. 
