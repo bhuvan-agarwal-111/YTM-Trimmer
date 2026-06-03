@@ -1,0 +1,303 @@
+/* YTM Trimmer — injected UI styles */
+
+/* ── Floating panel ─────────────────────────────────────────────────────── */
+
+#ytm-trimmer-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 240px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  color: #e0e0e0;
+  z-index: 999999;
+  display: none;
+  overflow: hidden;
+}
+
+#ytm-trimmer-panel.visible {
+  display: block;
+}
+
+.ytm-trimmer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #252525;
+  border-bottom: 1px solid #333;
+}
+
+.ytm-trimmer-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ytm-trimmer-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.ytm-trimmer-close:hover {
+  background: #333;
+  color: #fff;
+}
+
+.ytm-trimmer-body {
+  padding: 12px;
+}
+
+.ytm-trimmer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ytm-trimmer-row label {
+  width: 36px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.ytm-trimmer-time {
+  flex: 1;
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #e0e0e0;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: monospace;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.ytm-trimmer-time:focus {
+  border-color: #4caf50;
+}
+
+/* ── Toggle row ─────────────────────────────────────────────────────────── */
+.ytm-trimmer-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+}
+
+.ytm-trimmer-switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.ytm-trimmer-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ytm-trimmer-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #444;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.ytm-trimmer-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.ytm-trimmer-switch input:checked + .ytm-trimmer-slider {
+  background: #4caf50;
+}
+
+.ytm-trimmer-switch input:checked + .ytm-trimmer-slider::before {
+  transform: translateX(14px);
+}
+
+.ytm-trimmer-toggle-label {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.ytm-trimmer-error {
+  font-size: 11px;
+  color: #ff6b6b;
+  min-height: 14px;
+  margin-bottom: 6px;
+  display: none;
+}
+
+.ytm-trimmer-error.visible {
+  display: block;
+}
+
+.ytm-trimmer-time.ytm-trimmer-invalid {
+  border-color: #ff4444;
+}
+
+/* ── Progress bar trim indicators (one per interval, Shadow DOM child) ─── */
+
+.ytm-trimmer-progress-indicator {
+  position: absolute;
+  top: 0;
+  height: 5px;
+  background: rgba(76, 175, 80, 0.45);
+  pointer-events: none;
+  display: none;
+  z-index: 100;
+  border-radius: 2px;
+}
+
+/* ── Floating panel interval rows ─────────────────────────────────────── */
+
+.ytm-trimmer-intervals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.ytm-trimmer-iv-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ytm-trimmer-iv-label {
+  font-size: 10px;
+  color: #888;
+  width: 14px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.ytm-trimmer-iv-sep {
+  color: #555;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.ytm-trimmer-iv-start,
+.ytm-trimmer-iv-end {
+  flex: 1;
+  min-width: 0;
+}
+
+.ytm-trimmer-set-btn {
+  background: #4caf50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.ytm-trimmer-set-btn:hover {
+  background: #66bb6a;
+}
+
+.ytm-trimmer-add-row {
+  margin-bottom: 8px;
+}
+
+.ytm-trimmer-add-btn {
+  width: 100%;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #aaa;
+  padding: 5px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ytm-trimmer-add-btn:hover {
+  background: #3e3e3e;
+  color: #ccc;
+}
+
+.ytm-trimmer-del-iv {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  flex-shrink: 0;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.ytm-trimmer-del-iv:hover:not(:disabled) {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+.ytm-trimmer-del-iv:disabled {
+  color: #333;
+  cursor: not-allowed;
+}
+
+/* ── Toast notification ─────────────────────────────────────────────────── */
+
+#ytm-trimmer-toast {
+  position: fixed;
+  bottom: 120px;
+  right: 16px;
+  background: #252525;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  z-index: 999999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+#ytm-trimmer-toast.fade-out {
+  opacity: 0;
+}
