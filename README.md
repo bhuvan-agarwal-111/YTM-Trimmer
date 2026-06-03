@@ -1,5 +1,7 @@
 # YTM Trimmer
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Problem Statement
 Have you ever listened to a song on YouTube Music and wished you could skip a long, drawn-out intro, or cut off a 2-minute silent outro? Maybe you only want to listen to a specific section of an hour-long mix. 
@@ -14,6 +16,18 @@ Have you ever listened to a song on YouTube Music and wished you could skip a lo
 - **In-Page Panel:** Access controls directly on the YouTube Music page with a quick shortcut.
 - **Extension Popup:** Manage all your saved trims in one place. Toggle specific song trims on/off, search through your saved trims, and delete them when no longer needed.
 - **Keyboard Shortcuts:** Quick, global shortcuts to set times on the fly without breaking your workflow.
+
+## Screenshots & Demo
+
+Here is the extension in action:
+
+![YTM Trimmer Demo](assets/working-gif.gif)
+
+### Extension Interface
+
+| Extension Popup UI | In-Page Trimming Panel |
+| :---: | :---: |
+| ![Extension Popup](assets/popup-screenshot.png) | ![In-Page Control Panel](assets/panel-screenshot.png) |
 
 ## Installation (Unpacked)
 Currently, this extension is available to install manually. This works for any Chromium-based browser like Google Chrome, Microsoft Edge, Opera, Brave, etc.
